@@ -22,5 +22,5 @@ signature = sign_message(private_key, message)
 verification_result = verify_signature(public_key, message, signature)
 
 print(f"Mesazhi Origjinal: {message}")
-print(f"Nënshkrimi: {signature}")
+print(f"Nënshkrimi: {signature.hex()}")
 print(f"Rrezultati pas verifikimit: {verification_result}")
