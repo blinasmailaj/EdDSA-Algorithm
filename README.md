@@ -54,4 +54,7 @@ print(f"Mesazhi Origjinal: {message}")
 print(f"Nënshkrimi: {signature.hex()}")
 print(f"Rrezultati pas verifikimit: {verification_result}")
 ```
+
+### User Interface Overview
+
 ---
