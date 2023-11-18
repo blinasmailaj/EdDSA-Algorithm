@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edwards Curve Digital Signature Algorithm</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Edwards curve Digital Signature Algorithm</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="message">Enter Message to Sign:</label>
+                <input type="text" class="form-control" id="message" name="message" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign</button>
+        </form>
+        {% if message %}
+        <div class="mt-3">
+            <h6>Message: {{ message }}</h6><hr>
+            <h6>Generated Signature:</h6>
+            <p>{{ signature }}</p>
+            <form method="POST">
+                <input type="hidden" name="message" value="{{ message }}">
+                <h6>Enter Signature:</h6>
+                <input type="text" class="form-control" id="edited_signature" name="signature" placeholder="Enter signature for validation">
+                <br>
+                <button type="submit" class="btn btn-info" name="verify">Verify</button>
+            </form>
+            <br>
+            {% if verification_result is not none %}
+            <h5>Verification Result:    {% if verification_result %} Valid
+                                        {% else %}  Invalid
+                                        {% endif %} </h5>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
