@@ -56,5 +56,6 @@ print(f"Rrezultati pas verifikimit: {verification_result}")
 ```
 
 ### User Interface Overview
+![ezgif com-video-to-gif](https://github.com/blinasmailaj/EdDSA-Algorithm/assets/74669741/d25cbe7c-fec2-4f0f-8158-46c0c916b0f2)
 
 ---
