@@ -5,13 +5,13 @@ def generate_key_pair():
 
 def sign_message(private_key, message):
     sk = ed25519.SigningKey(private_key)
-    signature = sk.sign(message.encode())
+    signature = sk.sign(message.encode('utf-8'))
     return signature
 
 def verify_signature(public_key, message, signature):
     vk = ed25519.VerifyingKey(public_key)
     try:
-        vk.verify(signature, message.encode())
+        vk.verify(signature, message.encode('utf-8'))
         return True
     except ed25519.BadSignatureError:
         return False
